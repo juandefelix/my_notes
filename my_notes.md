@@ -33,6 +33,25 @@ BUNDLER
 RUBY 
 ====
 
+### Ruby Methods  
+
+- **_send_** `object.send("method", "arg1", "arg2")` executes the method in the object with the arguments.  
+
+### Strings
+
+A different way to represent strings:
+
+	<<-STR
+	your string here
+	also here
+	STR
+
+### \_\_FILE__
+
+`__FILE__` (with two underscores) represent the string with the name of the current file
+
+`File.expand_path(“../../Gemfile”, __FILE__)` returns a string of a path that starts in the second argument directory, and will have the structure and name of the first argument.
+
 ### Rake (not the same as _rack_)
 
 Rake is Ruby Make, a standalone Ruby utility that replaces the Unix utility 'make', and uses a 'Rakefile' and .rake files to build up a list of tasks.  
@@ -62,30 +81,13 @@ Or, you can use the rackup command line tool and avoid specifying details like p
 run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['get rack\'d']] }
 ```  
 **Setting RSpec for a small ruby program**  
-  1.	Createa a folder. Change directory to that folder  
-  2.	gem install bundler  
-  3.	`bundle init`  
-  4.	Modify the Gemfile created, include gem ‘rspec’  Save the file  
-  5.	`bundle install`  
-  6.	Create a file inside the spec/ folder with the rspec file  
-  7.	Create a folder lib/ and file inside with the ruby program to test  
-
-
-
-### Strings
-
-A different way to represent strings:
-
-	<<-STR
-	your string here
-	also here
-	STR
-
-### \_\_FILE__
-
-`__FILE__` (with two underscores) represent the string with the name of the current file
-
-`File.expand_path(“../../Gemfile”, __FILE__)` returns a string of a path that starts in the second argument directory, and will have the structure and name of the first argument.
+  1.  Createa a folder. Change directory to that folder  
+  2.  gem install bundler  
+  3.  `bundle init`  
+  4.  Modify the Gemfile created, include gem ‘rspec’  Save the file  
+  5.  `bundle install`  
+  6.  Create a file inside the spec/ folder with the rspec file  
+  7.  Create a folder lib/ and file inside with the ruby program to test  
 
 
 
@@ -133,9 +135,14 @@ The response will contain the status, content_type, the body, etc. If you want t
 
 Look like the params, cookie, and flash methods of the controller belong to the ActionDispatch class  
 
+
 ###Active Record  
 Interesting Active Record methods:  
-**_new\_record?_** `my_car.new_record?` will tell you if this particular object has been saved in the database
+- **_new\_record?_** `my_car.new_record?` will tell you if this particular object has been saved in the database.  
+- **_pluck_** `User.where(active: true).pluck(:name)` Queries the database, retrieveing the colums asked but it will not instanciate an Active Record object, speeding up the quering process. This is good for large queries. This method is not chainable.  
+[http://guides.rubyonrails.org/v4.0.8/active_record_querying.html#finding-by-sql](http://guides.rubyonrails.org/v4.0.8/active_record_querying.html#finding-by-sql)  
+- **_try_**  `object.try(:method_or_variable)` won't raise an exception if the object doesn't exist. This is not an ActiveRecord specific method. It is available for all objects in Rails.  
+
 
 ### Application Controller  
 The methods in Application Controller will be available to all the controllers.  
@@ -348,6 +355,6 @@ OTHER
 
 Unix: the pipe, using regular expressions  
 Rails: Html protocol, Caching, Middleware, Capybara, Selenium, Dir.  
-Active Record: Transactions, send, try, pluck.  
+Active Record: Transactions.  
 Git: rebase, interactive commit  
 Other: ITerm, System Preferences/Keyboard/Shortcuts/Keyboard  
