@@ -51,8 +51,8 @@ read about Rack
 # my_rack_app.rb 
 require 'rack'
 app = Proc.new do |env|
-    ['200', {'Content-Type' => 'text/html'}, ['A barebones rack app.']]
-end 
+  ['200', {'Content-Type' => 'text/html'}, ['A barebones rack app.']]
+end
 Rack::Handler::WEBrick.run app
 ```
 Or, you can use the rackup command line tool and avoid specifying details like port and server until runtime:
@@ -116,6 +116,27 @@ Any software component/library which assists with but is not directly involved i
 
 `rake middleware` is a terminal command. It displays the classes involved in the middleware.  
 
+### Rails Gemfile  
+Reading a gem from a local file  
+  `gem "foo", :path => "/path/to/foo”`
+
+from [http://stackoverflow.com/questions/4487948/how-can-i-specify-a-local-gem-in-my-gemfile](http://stackoverflow.com/questions/4487948/how-can-i-specify-a-local-gem-in-my-gemfile)  
+
+### HTTP PROTOCOL- The request and response objects
+
+There are two methods that contains the request from the browser and response from the application.  
+They are `request` and `response`. They are methods of `ActivaController::Base` and they both instances of `ActionDispatch` objects.  
+The request will contain the parameters, URL, cookie, protocol, etc. You can access to them by calling response.url, `response.headers[cookie]`  
+The response will contain the status, content_type, the body, etc. If you want to inspect the body, you have to call the `response.body`   
+
+#### Cookies, Params, Flash, ActionDispatch 
+
+Look like the params, cookie, and flash methods of the controller belong to the ActionDispatch class  
+
+###Active Record  
+Interesting Active Record methods:  
+**_new\_record?_** `my_car.new_record?` will tell you if this particular object has been saved in the database
+
 ### Application Controller  
 The methods in Application Controller will be available to all the controllers.  
 They can be called with a filter (before, around or after filter) or they can be called inside the methods in the controller, same as private methods.  
@@ -130,19 +151,9 @@ Helpers are modules, and basically are a group of methods, so they can be includ
 If you have a method that might be interesting for views, you can make it available to the views by typing after the class declaration:  
 `helper_method :your_method`  
 
-### Rails Gemfile  
-Reading a gem from a local file  
-	`gem "foo", :path => "/path/to/foo”`
-
-from [http://stackoverflow.com/questions/4487948/how-can-i-specify-a-local-gem-in-my-gemfile](http://stackoverflow.com/questions/4487948/how-can-i-specify-a-local-gem-in-my-gemfile)  
-
-
-
 ### Rails Migrations  
 In order to rollback a migration, type:  
-	`rake db:rollback STEP=1`
-
-
+  `rake db:rollback STEP=1`
 
 ### Adding API keys and secret to a yaml file in a Rail app  
 I'm following this tutorial [http://railsapps.github.io/rails-environment-variables.html](http://railsapps.github.io/rails-environment-variables.html)  
@@ -151,20 +162,20 @@ Create a file:
 Add to .gitignore:  
 `/config/local_env.yml`  
 Add to the file `config/local_env.yml` the following:
-	```FACEBOOK_API_KEY: ‘the_api_key’  
-	FACEBOOK_API_SECRET: ‘the_api_secret’  ``` (Don’t forget the quotes, they are important)  
+  ```FACEBOOK_API_KEY: ‘the_api_key’  
+  FACEBOOK_API_SECRET: ‘the_api_secret’  ``` (Don’t forget the quotes, they are important)  
 Modify the file `config/application.rb` and add inside the class the following:  
 ```ruby
 config.before_configuration do
   env_file = File.join(Rails.root, 'config', 'local_env.yml')
   YAML.load(File.open(env_file)).each do |key, value|
-	  ENV[key.to_s] = value
+    ENV[key.to_s] = value
   end if File.exists?(env_file)
 end
 ```
 Start the application server typing `rails s` in terminal.  
 I had an error `no implicit convertion of fixnum into String` because I forgot the single quotes in the YAML file. Added the quotes and the sever started without problem.  
-	
+  
 ### Configuring a Rails app to use Facebook sign in
 
 First of all: I'm following this tutorial from Rails Casts to do the implementation of facebook: [http://railscasts.com/episodes/241-simple-omniauth](http://railscasts.com/episodes/241-simple-omniauth)  
@@ -182,10 +193,9 @@ Substitute the key and secret for the secret and key of your registered applicat
 Starting the server `rails s`
 gives the following error: `warning: already initialized constant APP_PATH`  
 Commented out the line where the `gem “spring”` is. Run `bundle` in terminal. Now I get another error:  
-`Could not find matching strategy for :facebook. You may 	need to install an additional gem (such as omniauth-		facebook)`  
+`Could not find matching strategy for :facebook. You may  need to install an additional gem (such as omniauth-    facebook)`  
 Addind gem ‘omniauth-facebook’ to Gemfile. Running `bundle` in terminal. Running `rails s` on the terminal is now working.  
 Add to application.html.erb: `<%= link_to “Sign in with facebook”, “/auth/facebook” %>`
-
 
 ### Using Ruby Debugger (now byebug gem replaced debugger)
 
@@ -196,8 +206,8 @@ In your teminal: rails s
 Set a breakpoint in your code typing debugger somewhere in your code  
 In the debugger console:  
 `help` lists all the commands  
-`help` command 	shows help on a command  
-`list` or `l`	shows the code where you are. You have to type it everytime you hit next or step in order to see the code.  
+`help` command  shows help on a command  
+`list` or `l` shows the code where you are. You have to type it everytime you hit next or step in order to see the code.  
 `next` execute the line with the arrow and break on the next line  
 `step` stepping inside the next method call  
 `continue` Continue the execution  
@@ -214,17 +224,6 @@ Factory.build(:user) # doesn’t save. Works in memory only
 Factory.attributes_for(:user) # doesn’t save. Works in memory.
 Factory(:user) # same as Factory.create(:user)
 ```
-
-### HTTP PROTOCOL- The request and response objects
-
-There are two methods that contains the request from the browser and response from the application.  
-They are `request` and `response`. They are methods of `ActivaController::Base` and they both instances of `ActionDispatch` objects.  
-The request will contain the parameters, URL, cookie, protocol, etc. You can access to them by calling response.url, `response.headers[cookie]`  
-The response will contain the status, content_type, the body, etc. If you want to inspect the body, you have to call the `response.body`   
-
-#### Cookies, Params, Flash, ActionDispatch 
-
-Look like the params, cookie, and flash methods of the controller belong to the ActionDispatch class  
 
 GIT 
 ====  
@@ -301,6 +300,10 @@ Only n commits	`git log -1`
 It shows the differences `git log -p`  
 
 ### Unstaging files  
+We are assuming that we have a file in the staging area.  
+`git rm --cached &lt;filename>` will unstage the file but i'll keep it in your working directory.
+`git rm -f &lt;filename>` will unstage the file and it will erase from your working directory.
+
 To clear the whole staging area, type: `git reset`  
 When you want to unstage files, type: `git reset HEAD <filename>`  
 Remove a file fron the staging area but keeping it in you hard drive: `git rm --cached filename`  
@@ -325,6 +328,7 @@ SUBLIME
 **_command + alt + mays + num_**    Divide the screen horizontally  
 
 #### Tabs, Groups  
+**_ctrl + alt_**  Move between the tabs  
 **_ctrl + num_**  Move between the groups  
 **_command + num_**  Move between the screens in a group  
 **_ctrl + shift + num_**  Move a tab to a group  
@@ -344,6 +348,6 @@ OTHER
 
 Unix: the pipe, using regular expressions  
 Rails: Html protocol, Caching, Middleware, Capybara, Selenium, Dir.  
-Active Record: Transactions, send, try.  
+Active Record: Transactions, send, try, pluck.  
 Git: rebase, interactive commit  
 Other: ITerm, System Preferences/Keyboard/Shortcuts/Keyboard  
