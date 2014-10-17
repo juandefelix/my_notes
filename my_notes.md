@@ -159,8 +159,17 @@ If you have a method that might be interesting for views, you can make it availa
 `helper_method :your_method`  
 
 ### Rails Migrations  
+Check the status of your migrations:  
+`rake db:migrate:status`
 In order to rollback a migration, type:  
-  `rake db:rollback STEP=1`
+`rake db:rollback STEP=1` to rollback a number of steps.  
+`rake db:rollback VERSION=20141013232321` to rollback to a specific migration.  
+`rake db:version` you'll get the last migration runned.  
+
+Check the class **ActiveRecord::Migrator** has some methods that you can call to get some information about the migrations:  
+`ActiveRecord::Migrator.current_version` will return the current version.  
+`ActiveRecord::Migrator.get_all_versions` will return an array with the migrations.  
+
 
 ### Adding API keys and secret to a yaml file in a Rail app  
 I'm following this tutorial [http://railsapps.github.io/rails-environment-variables.html](http://railsapps.github.io/rails-environment-variables.html)  
@@ -356,5 +365,5 @@ OTHER
 Unix: the pipe, using regular expressions  
 Rails: Html protocol, Caching, Middleware, Capybara, Selenium, Dir.  
 Active Record: Transactions.  
-Git: rebase, interactive commit  
+Git: rebase, interactive commit, cherry pick  
 Other: ITerm, System Preferences/Keyboard/Shortcuts/Keyboard  
