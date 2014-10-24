@@ -1,3 +1,8 @@
+DESIGN PATTERNS
+===============
+
+**Decorator**: A class that wraps **a single class** and adds functionality methods to another object.  
+**Presenter**: Similar to the decorator but more than a single model would be involved.  
 
 PRY
 ===
@@ -367,3 +372,7 @@ Rails: Html protocol, Caching, Middleware, Capybara, Selenium, Dir.
 Active Record: Transactions.  
 Git: rebase, interactive commit, cherry pick  
 Other: ITerm, System Preferences/Keyboard/Shortcuts/Keyboard  
+
+
+
+**PORO**: **P**lain **O**ld **R**uby **O**bject
