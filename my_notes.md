@@ -227,7 +227,7 @@ In your teminal: rails s
 Set a breakpoint in your code typing debugger somewhere in your code  
 In the debugger console:  
 `help` lists all the commands  
-`help` command  shows help on a command  
+`help <command>`  shows help on a command  
 `list` or `l` shows the code where you are. You have to type it everytime you hit next or step in order to see the code.  
 `next` execute the line with the arrow and break on the next line  
 `step` stepping inside the next method call  
@@ -321,13 +321,13 @@ Only n commits	`git log -1`
 It shows the differences `git log -p`  
 
 ### Unstaging files  
+When you want to unstage files, type: `git reset HEAD <filename>`  
+To clear the whole staging area, type: `git reset`  
+
 We are assuming that we have a file in the staging area.  
 `git rm --cached <filename>` will unstage the file but i'll keep it in your working directory.
 `git rm -f <filename>` will unstage the file and it will erase from your working directory.
 
-To clear the whole staging area, type: `git reset`  
-When you want to unstage files, type: `git reset HEAD <filename>`  
-Remove a file fron the staging area but keeping it in you hard drive: `git rm --cached filename`  
   
 
 
