@@ -1,8 +1,8 @@
 DESIGN PATTERNS
 ===============
 
-**Decorator**: A class that wraps **a single class** and adds functionality methods to another object.  
-**Presenter**: Similar to the decorator but more than a single model would be involved.  
+**Decorator**: A class that wraps **a single class** and adds functionality methods to it. View code should not be written in the model, should belong to a Decorator.  
+**Presenter**: Logic in a view template that doesn't belong to a model, should not be in the controller or in the view. You can extract the logic into a presenter object. If you have so many variables that are available in the view, move them also to the presenter.   
 
 PRY
 ===
@@ -271,7 +271,7 @@ git merge remote/branch
 (slash between the remote and branch)  
 
 ### Merging locally  
-- Typing in your local repo `git merge &lt;local branch>` will merge your local current branch with the local branch provided in the command.  
+- Typing in your local repo `git merge <local branch>` will merge your local current branch with the local branch provided in the command.  
 - Your current local branch will merge the changes if there’s no conflict, but the branch you merged will remain untouched.  
 
 ### Which files have a conflict?  
@@ -309,9 +309,9 @@ To go back to the tip of the branch you were, you will have to type: `git checko
 
 ### Git diff  
 In general, it will show you the differences between comits.  
-`git diff &lt;filename>`
+`git diff <filename>`
 will show the difference in that file between the staged file and the same file in the working directory  
-`git diff &lt;remote>/&lt;branch>`  
+`git diff <remote> <branch>`  
 will show the difference between your local branch and the remote branch  
 
 ### Git log  
@@ -322,8 +322,8 @@ It shows the differences `git log -p`
 
 ### Unstaging files  
 We are assuming that we have a file in the staging area.  
-`git rm --cached &lt;filename>` will unstage the file but i'll keep it in your working directory.
-`git rm -f &lt;filename>` will unstage the file and it will erase from your working directory.
+`git rm --cached <filename>` will unstage the file but i'll keep it in your working directory.
+`git rm -f <filename>` will unstage the file and it will erase from your working directory.
 
 To clear the whole staging area, type: `git reset`  
 When you want to unstage files, type: `git reset HEAD <filename>`  
@@ -334,7 +334,7 @@ Remove a file fron the staging area but keeping it in you hard drive: `git rm --
 UNIX
 ====
 ### Looking for a word inside your directory  
-`grep -nr &lt;yourString> &lt;your directory>` e.g.   `grep -nr binding.pry ./app/controllers`
+`grep -nr <yourString> <your directory>` e.g.   `grep -nr binding.pry ./app/controllers`
 
 SUBLIME
 =======  
@@ -375,4 +375,4 @@ Other: ITerm, System Preferences/Keyboard/Shortcuts/Keyboard
 
 
 
-**PORO**: **P**lain **O**ld **R**uby **O**bject
+**PORO**: Plain Old Ruby Object
