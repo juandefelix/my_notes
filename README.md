@@ -336,6 +336,9 @@ UNIX
 ### Looking for a word inside your directory  
 `grep -nr <yourString> <your directory>` e.g.   `grep -nr binding.pry ./app/controllers`
 
+### Writing content in a file
+`echo "my content" > file.txt
+
 SUBLIME
 =======  
 #### Macros  
