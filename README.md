@@ -96,7 +96,7 @@ run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['get rack\'d']] }
 
 
 
-RAILS  
+RAILS
 =====
 
 ### What happens when you run rails server?
@@ -246,7 +246,7 @@ Factory.attributes_for(:user) # doesn’t save. Works in memory.
 Factory(:user) # same as Factory.create(:user)
 ```
 
-GIT 
+GIT
 ====  
 
 ### Creating a repo  
