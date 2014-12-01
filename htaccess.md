@@ -44,4 +44,4 @@ RewriteRule ^(.*)/?$ content.cfm?page=%{REQUEST_URI} [NS,L,QSA]
 ## Using query strings  
 You can write a condition against a query string with  
 `RewriteCond %{QUERY_STRING} value`  
-where value is can be a regular expression. The query string won't include the character `?`. Any capture in this statement can be used as %number in the replacement string. **If you write a `?` in the end of the replacement string, the query string won't be appended to it.**
+where value is can be a regular expression. The query string won't include the character `?`. Any capture in this statement can be used as `%number` in the replacement string. **If you write a `?` in the end of the replacement string, the query string won't be appended to it.**
