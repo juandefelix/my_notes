@@ -12,7 +12,7 @@ You can use these resources to write the proper syntax for redirecting:
 [Regex in Perl](http://perldoc.perl.org/perlreref.html)  
 [More regex in Perl](http://pcre.org/pcre.txt)  
 [Lots of examples](https://gist.github.com/ScottPhillips/1721489)  
-
+[Editing Query String](https://wiki.apache.org/httpd/RewriteQueryString)
 An file example:  
 ```
 RewriteEngine On
@@ -40,3 +40,8 @@ RewriteRule /(\d+)[^\/]*$ /page/news?id=$1 [R=301]
 # Pass along the REQUEST_URI as the page
 RewriteRule ^(.*)/?$ content.cfm?page=%{REQUEST_URI} [NS,L,QSA]
 ```
+
+## Using query strings  
+You can write a condition against a query string with  
+`RewriteCond %{QUERY_STRING} value`  
+where value is can be a regular expression. The query string won't include the character `?`. Any capture in this statement can be used as %number in the replacement string. **If you write a `?` in the end of the replacement string, the query string won't be appended to it.**
