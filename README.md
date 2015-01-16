@@ -85,14 +85,32 @@ Or, you can use the rackup command line tool and avoid specifying details like p
 # config.ru
 run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['get rack\'d']] }
 ```  
-**Setting RSpec for a small ruby program**  
-  1.  Createa a folder. Change directory to that folder  
-  2.  gem install bundler  
+### Setting RSpec outside Rails
+  1.  Createa a folder. Change directory to that folder.  
+  2.  `gem install bundler`  
   3.  `bundle init`  
-  4.  Modify the Gemfile created, include gem ‘rspec’  Save the file  
+  4.  Modify the Gemfile created, include `gem ‘rspec’`.    
   5.  `bundle install`  
-  6.  Create a file inside the spec/ folder with the rspec file  
-  7.  Create a folder lib/ and file inside with the ruby program to test  
+  6.  `rspec --intit` creates the `/spec` folder and initializes rspec. 
+  7.  Create a folder `lib/` and file inside with the ruby program to test.  
+  8.  Create a file inside the `spec/` folder with the name `filename_spec.rb`. Write your tests inside. Here is some sample.  
+  ```ruby
+  describe "my method" do
+  it 'should return 1' do
+    expect(my_method).to eq 1
+  end
+
+  it "this syntax is deprecated" do
+    my_method.should eq 1
+  end
+end
+
+describe "subject syntax" do
+  subject { my_method }
+
+  it { should eq 1 }
+end
+``` 
 
 
 
