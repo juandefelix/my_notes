@@ -96,20 +96,20 @@ run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['get rack\'d']] }
   8.  Create a file inside the `spec/` folder with the name `filename_spec.rb`. Write your tests inside. Here is some sample.  
   ```ruby
   describe "my method" do
-  it 'should return 1' do
-    expect(my_method).to eq 1
+    it 'should return 1' do
+      expect(my_method).to eq 1
+    end
+
+    it "this syntax is deprecated" do
+      my_method.should eq 1
+    end
   end
 
-  it "this syntax is deprecated" do
-    my_method.should eq 1
+  describe "subject syntax" do
+    subject { my_method }
+
+    it { should eq 1 }
   end
-end
-
-describe "subject syntax" do
-  subject { my_method }
-
-  it { should eq 1 }
-end
 ``` 
 
 
