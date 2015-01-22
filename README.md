@@ -292,6 +292,14 @@ git merge remote/branch
 - Typing in your local repo `git merge <local branch>` will merge your local current branch with the local branch provided in the command.  
 - Your current local branch will merge the changes if there’s no conflict, but the branch you merged will remain untouched.  
 
+### Merging your changes to a different branches  
+```
+git stash
+git checkout branch2
+git stash pop
+```
+
+
 ### Which files have a conflict?  
 `git status` will give you the answer.  
 
@@ -302,6 +310,12 @@ git merge remote/branch
 	- if the pull request is accepted, the changes in that branch will merge to master. You have the option of deleting the branch.  
     If you don’t, the branch will be part of the remote repo and your commits will show up in the branch.  
 	- future commits to this branch will be pushed to the branch with no pull request. You can merge these changes to master clicking the pull request button.  
+
+### Pushing to a remote from a branch different that master  
+  
+`git push remote_name your_local_branch:master`  
+More info in this [Heroku Page](https://devcenter.heroku.com/articles/git)  
+
 
 ### If you forgot to add a file before commiting  
 -Add the file to the staging area  
@@ -347,7 +361,13 @@ We are assuming that we have a file in the staging area.
 `git rm -f <filename>` will unstage the file and it will erase from your working directory.
 
   
+HEROKU
+======
 
+### Creating different Heroku apps for different environments (production, staging)  
+`heroku create --remote enviroment_name`  
+More info in this [Heroku Page](https://devcenter.heroku.com/articles/multiple-environments)  
+You can find how to push code from different branches of a repo to different Heroku apps in the Git section
 
 UNIX
 ====
