@@ -395,7 +395,10 @@ SUBLIME
 **_command + num_**  Move between the screens in a group  
 **_ctrl + shift + num_**  Move a tab to a group  
 
+RVM
+===
 
+Setting up a rvm version for each folder. [StackOverflow](http://stackoverflow.com/questions/15708916/use-rvmrc-or-ruby-version-file-to-set-a-project-gemset-with-rvm)
 
 OTHER
 =====
