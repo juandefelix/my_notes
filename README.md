@@ -159,13 +159,13 @@ The response will contain the status, content_type, the body, etc. If you want t
 Look like the params, cookie, and flash methods of the controller belong to the ActionDispatch class  
 
 
-###Active Record  
+### Active Record  
 Interesting Active Record methods:  
 - **_new\_record?_** `my_car.new_record?` will tell you if this particular object has been saved in the database.  
 - **_pluck_** `User.where(active: true).pluck(:name)` Queries the database, retrieveing the colums asked but it will not instanciate an Active Record object, speeding up the quering process. This is good for large queries. This method is not chainable.  
 [http://guides.rubyonrails.org/v4.0.8/active_record_querying.html#finding-by-sql](http://guides.rubyonrails.org/v4.0.8/active_record_querying.html#finding-by-sql)  
 - **_try_**  `object.try(:method_or_variable)` won't raise an exception if the object doesn't exist. This is not an ActiveRecord specific method. It is available for all objects in Rails.  
-
+- Model.**find_by_id**(params[:id]) instead of Model.find(params[:id]). In the first case if the object doesn't exits, the result is `nil`. In the second case, an error will be railsed.
 
 ### Application Controller  
 The methods in Application Controller will be available to all the controllers.  
