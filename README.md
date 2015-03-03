@@ -163,7 +163,7 @@ Look like the params, cookie, and flash methods of the controller belong to the 
 ### Active Record  
 Interesting Active Record methods:  
 - **_new\_record?_** `my_car.new_record?` will tell you if this particular object has been saved in the database.  
-- **_pluck_** `User.where(active: true).pluck(:name)` Queries the database, retrieveing the colums asked but it will not instanciate an Active Record object, speeding up the quering process. This is good for large queries. This method is not chainable.  
+- **_pluck_** `User.where(active: true).pluck(:name)` Queries the database, retrieveing the colums asked but it will not instantiate an Active Record object, speeding up the quering process. This is good for large queries. This method is not chainable.  
 [http://guides.rubyonrails.org/v4.0.8/active_record_querying.html#finding-by-sql](http://guides.rubyonrails.org/v4.0.8/active_record_querying.html#finding-by-sql)  
 - **_try_**  `object.try(:method_or_variable)` won't raise an exception if the object doesn't exist. This is not an ActiveRecord specific method. It is available for all objects in Rails.  
 - Model.**find_by_id**(params[:id]) instead of Model.find(params[:id]). In the first case if the object doesn't exits, the result is `nil`. In the second case, an error will be railsed.
@@ -279,10 +279,10 @@ If not, you can create it by typing ‘git init’ in the project folder, then a
 
 
 ### Git Fetch  
-In you local repo there are some branches called “Remote Tracking Branches” and you can access them typing  
+In you local repo there are some branches called “Remote Tracking Branches”. You can list them typing  
 `git branch -r`  
-You can not checkout to this branches. When you fetch, you ask to bring to this branches the changes made in the correspondent remote and branch repo.  
-In orger to integrate these changes to you local repo you have to merge them. You can do this by:  
+You can not checkout to this branches. When you fetch, you are asking to bring to this branches the changes made in the correspondent remote and branch repo.  
+In order to integrate these changes to you local repo, you have to merge them. You can do this by:  
 ```
 git checkout your-branch
 git merge remote/branch
