@@ -279,10 +279,10 @@ If not, you can create it by typing ‘git init’ in the project folder, then a
 
 
 ### Git Fetch  
-In you local repo there are some branches called “Remote Tracking Branches” and you can access them typing  
+In you local repo there are some branches called “Remote Tracking Branches”. You can list them typing  
 `git branch -r`  
-You can not checkout to this branches. When you fetch, you ask to bring to this branches the changes made in the correspondent remote and branch repo.  
-In orger to integrate these changes to you local repo you have to merge them. You can do this by:  
+You can not checkout to this branches. When you fetch, you are asking to bring to this branches the changes made in the correspondent remote and branch repo.  
+In order to integrate these changes to you local repo, you have to merge them. You can do this by:  
 ```
 git checkout your-branch
 git merge remote/branch
