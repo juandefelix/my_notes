@@ -400,7 +400,7 @@ require 'rubygems'
 ```
 ###pbcopy
 Use the standard input to add content to the cliboard.  
-`gem show rails | pbcopy`  will copy the directory of the rails gem to the clipboard . 
+`gem show rails | pbcopy`  will copy the directory of the rails gem to the clipboard. 
 
 
 SUBLIME
