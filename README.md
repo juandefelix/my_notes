@@ -31,7 +31,8 @@ BUNDLER
 =======
 
 
-`bundle update your_gem` will update only the specified gem.
+`bundle update gem_name` will update only the specified gem.  
+`bundle show gem_name` will show the location of a gem.  
 
 
 
@@ -375,7 +376,29 @@ UNIX
 `grep -nr <yourString> <your directory>` e.g.   `grep -nr binding.pry ./app/controllers`
 
 ### Writing content in a file
-`echo "my content" > file.txt
+`echo "my content" > file.txt`  
+
+### Creating a file  
+`touch folder/filename.extension`
+
+### Create a Symlinks  
+`ln -s /path/to/origin/filename_or_folder /path/to/destination_file`
+
+### Repeat last command typed in console
+`!!`  
+### Create bash commands
+`cd /usr/bin`  
+`sudo touch new-command-name`  
+Write some bash commands in the `new-command-name` file and save it.  
+Change permissions to make it executable `sudo chmod +x new-command-name`  
+In order to be able to execute ruby commands your file shold have to look like this  
+```ruby
+#!/usr/bin/ruby
+# The previous line makes possible to write ruby scripts.
+# requiring gems in the next line
+require 'rubygems'
+```
+
 
 SUBLIME
 =======  
