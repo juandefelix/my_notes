@@ -398,6 +398,9 @@ In order to be able to execute ruby commands your file shold have to look like t
 # requiring gems in the next line
 require 'rubygems'
 ```
+###pbcopy
+Use the standard input to add content to the cliboard.  
+`gem show rails | pbcopy`  will copy the directory of the rails gem to the clipboard . 
 
 
 SUBLIME
