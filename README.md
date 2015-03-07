@@ -38,6 +38,9 @@ BUNDLER
 
 RUBY 
 ====
+### Namespaces  
+If you prepend a constant with :: without a parent, the scoping happens on the topmost level.  
+[Modules as Namespaces](https://rubymonk.com/learning/books/1-ruby-primer/chapters/35-modules/lessons/80-modules-as-namespaces)
 
 ### Another way to declare class methods:  
 ```ruby
