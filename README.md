@@ -39,6 +39,20 @@ BUNDLER
 RUBY 
 ====
 
+### Another way to declare class methods:  
+```ruby
+class Item
+  
+  class << self
+    def show
+      puts "Class method show invoked"
+    end
+  end
+  
+end
+Item.show
+```
+
 ### Ruby Methods  
 
 - **_send_** `object.send("method", "arg1", "arg2")` executes the method in the object with the arguments.  
