@@ -444,7 +444,16 @@ SUBLIME
 RVM
 ===
 
-Setting up a rvm version for each folder. [StackOverflow](http://stackoverflow.com/questions/15708916/use-rvmrc-or-ruby-version-file-to-set-a-project-gemset-with-rvm)
+Setting up a rvm version for each folder. [StackOverflow](http://stackoverflow.com/questions/15708916/use-rvmrc-or-ruby-version-file-to-set-a-project-gemset-with-rvm)  
+
+WEB DEVELOPMENT
+===============
+
+### Debugging ajax in Chrome  
+
+To debug data sent go to the 'Network' Menu. A table with request will display. You'll see all the requests. Find your request and click on it. Several tabs will show up. If you clock on 'Headers' and then find the 'Query String Parameters' diplay. You will be able to see inside the parameters sent to the server.  
+
+To see the server response, right-click on the console and enable "Log XMLHttpRequests". When an ajax sequest is sent, the object will display in the console. A URL will display. Right click on it and the new window you'll see the response from the server.
 
 OTHER
 =====
