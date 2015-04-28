@@ -377,7 +377,9 @@ We are assuming that we have a file in the staging area.
 `git rm --cached <filename>` will unstage the file but i'll keep it in your working directory.
 `git rm -f <filename>` will unstage the file and it will erase from your working directory.
 
-  
+### Tracking remote branches  
+`git checkout -b branch_name remote_name/remote_branch_name`  
+
 HEROKU
 ======
 
