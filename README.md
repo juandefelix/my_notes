@@ -333,7 +333,11 @@ git stash pop
 `git push remote_name your_local_branch:master`  
 More info in this [Heroku Page](https://devcenter.heroku.com/articles/git)  
 
+### Pushing to a pull request made by another user
+`git push  <REMOTE> <LOCALBRANCHNAME>:<REMOTEBRANCHNAME> `  
+<REMOTE> can be also a github url. <REMOTEBRANCHNAME> is the branch that created the pull request.  
 
+git push  <REMOTENAME> <LOCALBRANCHNAME>:<REMOTEBRANCHNAME> 
 ### If you forgot to add a file before commiting  
 -Add the file to the staging area  
 `git add -A`  
