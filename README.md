@@ -281,6 +281,15 @@ Factory.attributes_for(:user) # doesn’t save. Works in memory.
 Factory(:user) # same as Factory.create(:user)
 ```
 
+### Rails Internationalization
+If you want to use a file system for your locales, don't forget to add this to your application configuration file.
+```ruby
+# config/application.rb
+config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+```
+
+__Lazy Lookup__
+
 GIT
 ====  
 
