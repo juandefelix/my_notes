@@ -342,7 +342,11 @@ git stash pop
 `git push remote_name your_local_branch:master`  
 More info in this [Heroku Page](https://devcenter.heroku.com/articles/git)  
 
+### Pushing to a pull request made by another user
+`git push  <REMOTE> <LOCALBRANCHNAME>:<REMOTEBRANCHNAME> `  
+<REMOTE> can be also a github url. <REMOTEBRANCHNAME> is the branch that created the pull request.  
 
+git push  <REMOTENAME> <LOCALBRANCHNAME>:<REMOTEBRANCHNAME> 
 ### If you forgot to add a file before commiting  
 -Add the file to the staging area  
 `git add -A`  
@@ -386,7 +390,9 @@ We are assuming that we have a file in the staging area.
 `git rm --cached <filename>` will unstage the file but i'll keep it in your working directory.
 `git rm -f <filename>` will unstage the file and it will erase from your working directory.
 
-  
+### Tracking remote branches  
+`git checkout -b branch_name remote_name/remote_branch_name`  
+
 HEROKU
 ======
 
