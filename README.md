@@ -461,6 +461,11 @@ RVM
 
 Setting up a rvm version for each folder. [StackOverflow](http://stackoverflow.com/questions/15708916/use-rvmrc-or-ruby-version-file-to-set-a-project-gemset-with-rvm)  
 
+ANGULAR
+=======
+
+**Angular directives**:  `restrict: 'E'` makes it so you have to use cui-expandable in the element name for it to work. If you put `restrict:'C'` in there, it will activate on all elements with the ​_class_​ `cui-expandable`. You can also use `restrict: 'A'` for toggling with an `attribute` or any combination of the 3 `restrict:'AEC'
+
 WEB DEVELOPMENT
 ===============
 
