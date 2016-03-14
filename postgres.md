@@ -6,7 +6,7 @@ Manuals for postgres:
 **Create a database cluster**:  
 A database cluster needs to be created. This is a collection of databases that is managed by the database server. When the cluster is created, the _postgres_ database is created. This the default database for use by utilities, users and third party applications. The location for the data files is optional, although there are several popular locations such as `/usr/local/pgsql/data` or `/var/lib/pgsql/data`.  
 The command for cluster initialization is:  
-`initdb -D /usr/local/var/postgres`
+`initdb -D /usr/local/var/postgres`  
 **Start/Stop Postgres**:  
 In order to start postgres, you can run this command in the terminal:  
 `postgres -D /usr/local/var/postgres`  
