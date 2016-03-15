@@ -13,3 +13,6 @@ In order to start postgres, you can run this command in the terminal:
 The `pg_ctl` program, is a wraper to simplify postgres syntax.  
 `pg_ctl start  -D /usr/local/var/postgres -l logfile` will start postgres in the background and will store logs.  
 `pg_ctl` can also stop the database: `pg_ctl stop  -D /usr/local/var/postgres`
+
+**Foreign Keys - Referential Integrity**  
+You want to make sure that you don't have an entry in a table with an association that doesn't have a correspondent entry in the associated table. For that purpose you can use the foreign keys.
