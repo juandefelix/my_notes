@@ -108,7 +108,7 @@ run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['get rack\'d']] }
   3.  `bundle init`  
   4.  Modify the Gemfile created, include `gem ‘rspec’`.    
   5.  `bundle install`  
-  6.  `rspec --intit` creates the `/spec` folder and initializes rspec. 
+  6.  `rspec --init` creates the `/spec` folder and initializes rspec. 
   7.  Create a folder `lib/` and file inside with the ruby program to test.  
   8.  Create a file inside the `spec/` folder with the name `filename_spec.rb`. Write your tests inside. Here is some sample.  
 ```ruby
