@@ -3,6 +3,10 @@ Postgres
 Manuals for postgres:  
 [Starting the database cluster](http://www.postgresql.org/docs/8.2/static/creating-cluster.html)  
 [Starting the database server](http://www.postgresql.org/docs/8.2/static/server-start.html)  
+
+### Run at load and Keep Alive features  
+You can enable or disable these features modifiying the file `~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist `. Edit the xml in the file, setting to true/false these properties.
+
 ### Create a database cluster  
 A database cluster needs to be created. This is a collection of databases that is managed by the database server. When the cluster is created, the _postgres_ database is created. This the default database for use by utilities, users and third party applications. The location for the data files is optional, although there are several popular locations such as `/usr/local/pgsql/data` or `/var/lib/pgsql/data`.  
 The command for cluster initialization is:  
