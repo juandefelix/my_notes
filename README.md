@@ -288,7 +288,10 @@ If you want to use a file system for your locales, don't forget to add this to y
 config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 ```
 
-__Lazy Lookup__
+__Lazy Lookup__  
+
+### TODO: Authenticity Token
+Write a summary of [this](http://stackoverflow.com/questions/941594/understanding-the-rails-authenticity-token) StackOverflow question on Rails authenticity token. 
 
 GIT
 ====  
